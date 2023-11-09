@@ -34,5 +34,5 @@ I am following instructions here
 Somehow my ESP32-S3 did not respond to a double-tap on reset, so I did a factory reset and reloaded the UF2 bootloader. I followed the instructions here and it worked the first time.
 - https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays/install-uf2-bootloader
 
-I downloaded the MU editor as per instructions. It connected up to the ESP32-S3 board and its serial port. No red LED though.
-
+I downloaded the MU editor as per instructions. It connected up to the ESP32-S3 board and its serial port. No red LED though.<BR>
+Looks like sometimes I need to reset after saving new code MU.
