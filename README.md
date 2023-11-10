@@ -83,5 +83,21 @@ RetiredWizard commented 2 hours ago
 - @jacobmarble Try placing CIRCUITPY_HEAP_START_SIZE=1024000 in your settings.toml file.
   - github.com/Mark-MDO47 did not work for me
 
+This version worked for me as suggested by jacobmarble:
+- adafruit-circuitpython-adafruit_qualia_s3_rgb666-en_US-20231106-ccd667d.uf2
 
+#### settings toml file
+[Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
+https://docs.circuitpython.org/en/latest/docs/environment.html
+
+Should probably set the following
+
+CIRCUITPY_WEB_API_PASSWORD
+- Password required to make modifications to the board from the Web Workflow.
+
+- CIRCUITPY_WIFI_PASSWORD
+Wi-Fi password used to auto connect to CIRCUITPY_WIFI_SSID.
+
+- CIRCUITPY_WIFI_SSID
+Wi-Fi SSID to auto-connect to even if user code is not running.
 
