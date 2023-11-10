@@ -90,7 +90,7 @@ This version worked for me as suggested by jacobmarble:
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 https://docs.circuitpython.org/en/latest/docs/environment.html
 
-Should probably set the following
+Should probably set the following in settings.toml file
 
 CIRCUITPY_WEB_API_PASSWORD
 - Password required to make modifications to the board from the Web Workflow.
