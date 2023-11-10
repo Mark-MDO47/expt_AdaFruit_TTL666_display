@@ -42,6 +42,8 @@ Looks like sometimes I need to reset after saving new code MU.
 
 #### CircUp tool for libraries
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
+https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays/circuitpython-libraries
+
 Use the CircUp tool to get the libraries, or else copy the entire Adafruit library.
 - https://learn.adafruit.com/keep-your-circuitpython-libraries-on-devices-up-to-date-with-circup/usage
 
