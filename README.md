@@ -95,9 +95,9 @@ Should probably set the following
 CIRCUITPY_WEB_API_PASSWORD
 - Password required to make modifications to the board from the Web Workflow.
 
-- CIRCUITPY_WIFI_PASSWORD
-Wi-Fi password used to auto connect to CIRCUITPY_WIFI_SSID.
+CIRCUITPY_WIFI_PASSWORD
+- Wi-Fi password used to auto connect to CIRCUITPY_WIFI_SSID.
 
-- CIRCUITPY_WIFI_SSID
-Wi-Fi SSID to auto-connect to even if user code is not running.
+CIRCUITPY_WIFI_SSID
+- Wi-Fi SSID to auto-connect to even if user code is not running.
 
