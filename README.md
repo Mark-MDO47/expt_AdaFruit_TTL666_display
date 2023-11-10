@@ -57,7 +57,7 @@ RuntimeError: pystack exhausted
 
 Adafruit-Qualia-S3 "pystack exhausted"<br>
 https://forums.adafruit.com/viewtopic.php?p=992490#p992490
-- different values of CIRCUITPY_PYSTACK_SIZE=#### in settings.toml file
+- github.com/Mark-MDO47 different values of CIRCUITPY_PYSTACK_SIZE=#### in settings.toml file
   - 1756 too small (pystack exhausted)
   - 1760 too big (memory allocation failed)
 
