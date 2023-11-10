@@ -40,7 +40,13 @@ Somehow my ESP32-S3 did not respond to a double-tap on reset, so I did a factory
 I downloaded the MU editor as per instructions. It connected up to the ESP32-S3 board and its serial port. No red LED though.<BR>
 Looks like sometimes I need to reset after saving new code MU.
 
+#### CircUp tool for libraries
+[Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
+Use the CircUp tool to get the libraries, or else copy the entire Adafruit library.
+- https://learn.adafruit.com/keep-your-circuitpython-libraries-on-devices-up-to-date-with-circup/usage
+
 #### pystack exhausted
+[Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 Attempting example qualia_qrcode_generation.py; even with entire circuitpython bundle it is still missing something
 ```
 Auto-reload is on. Simply save files over USB to run them or enter REPL to disable.
