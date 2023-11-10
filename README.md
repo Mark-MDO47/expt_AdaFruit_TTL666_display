@@ -102,10 +102,11 @@ CIRCUITPY_WIFI_PASSWORD
 CIRCUITPY_WIFI_SSID
 - Wi-Fi SSID to auto-connect to even if user code is not running.
 
-#### simple
+#### Sample Programs
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
-qualia_simpletest.py
+All four sample programs now working!
 
+qualia_simpletest.py<br>
 ```
 Auto-reload is on. Simply save files over USB to run them or enter REPL to disable.
 code.py output:
