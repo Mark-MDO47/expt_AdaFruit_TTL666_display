@@ -110,7 +110,7 @@ qualia_simpletest.py
 Auto-reload is on. Simply save files over USB to run them or enter REPL to disable.
 code.py output:
 Fetching text from http://wifitest.adafruit.com/testwifi/index.html
-Connecting to AP LB_24G_1FLR
+Connecting to AP <<<myWIFI>>>
 Retrieving data...Reply is OK!
 ----------------------------------------
 This is a test of Adafruit WiFi!
