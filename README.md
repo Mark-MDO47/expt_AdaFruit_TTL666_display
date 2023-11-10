@@ -31,6 +31,10 @@ LCD Module spec: https://cdn-shop.adafruit.com/product-files/5792/Specification_
 
 ## Circuit Python
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
+| To Know | Where |
+| --- | --- |
+| UF2 Bootloader details | https://learn.adafruit.com/adafruit-hallowing/uf2-bootloader-details |
+| settings.toml file | [settings toml file](#settings-toml-file "settings toml file") |
 
 ### Blog
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
