@@ -90,10 +90,11 @@ This version worked for me as suggested by jacobmarble:
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 https://docs.circuitpython.org/en/latest/docs/environment.html
 
-Should probably set the following in settings.toml file
+Should probably set the following in settings.toml file; enclose strings within double-quotes ""
 
 CIRCUITPY_WEB_API_PASSWORD
 - Password required to make modifications to the board from the Web Workflow.
+  - I just set this to nonsense so it won't connect
 
 CIRCUITPY_WIFI_PASSWORD
 - Wi-Fi password used to auto connect to CIRCUITPY_WIFI_SSID.
@@ -101,3 +102,20 @@ CIRCUITPY_WIFI_PASSWORD
 CIRCUITPY_WIFI_SSID
 - Wi-Fi SSID to auto-connect to even if user code is not running.
 
+#### simple
+[Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
+qualia_simpletest.py
+
+```
+Auto-reload is on. Simply save files over USB to run them or enter REPL to disable.
+code.py output:
+Fetching text from http://wifitest.adafruit.com/testwifi/index.html
+Connecting to AP LB_24G_1FLR
+Retrieving data...Reply is OK!
+----------------------------------------
+This is a test of Adafruit WiFi!
+If you can read this, its working :)
+----------------------------------------
+
+Code done running.
+```
