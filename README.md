@@ -111,3 +111,5 @@ To do this I needed to be able to convert an image file (.bmp, .png, .jpg) to th
 - These files plus the original Adafruit files are in the **mdo_qualia_paint** directory. Copy img/mdo_goggle_565_lc160_320x480.bin to the root directory of the qualia CircuitPython drive then copy mdo_qualia_paint.py into the code.py file on that drive.
 
 <img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/mdo_qualia_paint.jpg" width="300" alt="Image of mdo_qualia_paint running">
+
+The hotspot on the bottom middle causes a screen re-draw.
