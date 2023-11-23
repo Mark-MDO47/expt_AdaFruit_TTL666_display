@@ -10,6 +10,7 @@ Author: Mark Olson
   * [CircUp tool for libraries](#circup-tool-for-libraries "CircUp tool for libraries")
   * [settings toml file](#settings-toml-file "settings toml file")
   * [Sample Programs](#sample-programs "Sample Programs")
+  * [mdo_qualia_paint](#mdo_qualia_paint "mdo_qualia_paint")
 
 ## Hardware
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
