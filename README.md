@@ -6,12 +6,10 @@ Author: Mark Olson
 **Table Of Contents**
 * [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")
 * [Hardware](#hardware "Hardware")
-* [Circuit Python](#circuit-python "Circuit Python")
-  * [Blog](#blog "Blog")
-    * [CircUp tool for libraries](#circup-tool-for-libraries "CircUp tool for libraries")
-    * [pystack exhausted](#pystack-exhausted "pystack exhausted")
-    * [settings toml file](#settings-toml-file "settings toml file")
-    * [Sample Programs](#sample-programs "Sample Programs")
+* [Circuit Python First Steps](#circuit-python-first-steps "Circuit Python First Steps")
+  * [CircUp tool for libraries](#circup-tool-for-libraries "CircUp tool for libraries")
+  * [settings toml file](#settings-toml-file "settings toml file")
+  * [Sample Programs](#sample-programs "Sample Programs")
 
 ## Hardware
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
