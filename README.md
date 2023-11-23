@@ -106,7 +106,7 @@ Code done running.
 I made a version of the sample program qualia_paint.py to put an image in the "paint" portion of the screen and called it **mdo_qualia_paint.py**
 
 To do this I needed to be able to convert an image file (.bmp, .png, .jpg) to the 16-bit RBG 565 format used by the display. I modified **tablegen.py** from https://github.com/adafruit/Uncanny_Eyes commit d2103e84aa33da9f6924885ebc06d880af8deeff and named it **mdo_tablegen.py**.
-- At first I had it continue to create the C-language *.h file and read that file in python and converted to binary. This took about 2.5 minutes to boot mdo_qualia_paint.py even after cropping the left 1/3 of the picture that is used for the controls.
+- At first I had it continue to create the C-language *.h file and read that file in mdo_qualia_paint and converted to binary on the board. This took about 2.5 minutes to boot mdo_qualia_paint.py even after cropping the left 1/3 of the picture that is used for the controls.
 - I then had it also create a **.bin** file that is a big-endian version of the data in raw binary. It now takes about 15 seconds to boot mdo_qualia_paint.py reading this *.bin file.
 - These files plus the original Adafruit files are in the **mdo_qualia_paint** directory. Copy img/mdo_goggle_565_lc160_320x480.bin to the root directory of the qualia CircuitPython drive then copy mdo_qualia_paint.py into the code.py file on that drive.
 
