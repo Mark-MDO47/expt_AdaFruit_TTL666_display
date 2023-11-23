@@ -1,7 +1,7 @@
 # Experimenting with Adafruit TTL RGB666 Displays
 Experimenting with Adafruit TTL RBG666 displays and Qualia ESP32-S3 RBG666 TFT I/F
 
-Author: Mark Olson
+Author: https://github.com/Mark-MDO47
 
 **Table Of Contents**
 * [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")
