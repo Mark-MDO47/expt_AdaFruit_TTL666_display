@@ -56,47 +56,8 @@ Looks like sometimes I need to reset after saving new code MU.
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays/circuitpython-libraries
 
-Use the CircUp tool to get the libraries, or else copy the entire Adafruit library.
+Use the CircUp tool to update the libraries, or else copy the entire new Adafruit library.
 - https://learn.adafruit.com/keep-your-circuitpython-libraries-on-devices-up-to-date-with-circup/usage
-
-#### pystack exhausted
-[Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
-Attempting example qualia_qrcode_generation.py; even with entire circuitpython bundle it is still missing something
-```
-Auto-reload is on. Simply save files over USB to run them or enter REPL to disable.
-code.py output:
-Traceback (most recent call last):
-  File "code.py", line 13, in <module>
-  File "adafruit_qualia/__init__.py", line 32, in <module>
-  File "adafruit_qualia/network.py", line 31, in <module>
-  File "adafruit_portalbase/network.py", line 28, in <module>
-  File "adafruit_io/adafruit_io.py", line 30, in <module>
-  File "adafruit_minimqtt/adafruit_minimqtt.py", line 47, in <module>
-RuntimeError: pystack exhausted
-```
-
-Adafruit-Qualia-S3 "pystack exhausted"<br>
-https://forums.adafruit.com/viewtopic.php?p=992490#p992490
-- github.com/Mark-MDO47 different values of CIRCUITPY_PYSTACK_SIZE=#### in settings.toml file
-  - 1756 too small (pystack exhausted)
-  - 1760 too big (memory allocation failed)
-
-
-Adafruit-Qualia-S3 "pystack exhausted" #8574<br>
-https://github.com/adafruit/circuitpython/issues/8574
-
-jacobmarble commented 3 hours ago
-- I found the "breaking version". This version allows me to import adafruit_qualia without error:
-  - Adafruit CircuitPython 9.0.0-alpha.2-16-gccd667d97a on 2023-11-06; Adafruit-Qualia-S3-RGB666 with ESP32S3
-- This subsequent version does not:
-  - Adafruit CircuitPython 9.0.0-alpha.2-17-g01be5f402e on 2023-11-08; Adafruit-Qualia-S3-RGB666 with ESP32S3
-
-RetiredWizard commented 2 hours ago
-- @jacobmarble Try placing CIRCUITPY_HEAP_START_SIZE=1024000 in your settings.toml file.
-  - github.com/Mark-MDO47 did not work for me
-
-This version worked for me as suggested by jacobmarble:
-- adafruit-circuitpython-adafruit_qualia_s3_rgb666-en_US-20231106-ccd667d.uf2
 
 #### settings toml file
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
@@ -113,6 +74,15 @@ CIRCUITPY_WIFI_PASSWORD
 
 CIRCUITPY_WIFI_SSID
 - Wi-Fi SSID to auto-connect to even if user code is not running.
+
+CIRCUITPY_HEAP_START_SIZE - undocumented
+- size of heap at startup
+- for qualia CIRCUITPY_HEAP_START_SIZE=3072000 seems good, but usually not needed
+
+CIRCUITPY_PYSTACK_SIZE - undocumented
+- size of stack at startup
+- for qualia CIRCUITPY_PYSTACK_SIZE=4000 seems good, but usually not needed
+
 
 #### Sample Programs
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
