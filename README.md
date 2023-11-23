@@ -29,14 +29,13 @@ LCD Module spec: https://cdn-shop.adafruit.com/product-files/5792/Specification_
 - ST7701S chip spec for above: https://cdn-shop.adafruit.com/product-files/5792/ST7701+Datasheet.pdf
 - Display Init code: https://cdn-shop.adafruit.com/product-files/5792/TL021WVC-B1323+SPI+Init+Code.txt
 
-## Circuit Python
+## Circuit Python First Steps
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 | To Know | Where |
 | --- | --- |
 | UF2 Bootloader details | https://learn.adafruit.com/adafruit-hallowing/uf2-bootloader-details |
 | settings.toml file | [settings toml file](#settings-toml-file "settings toml file") |
 
-### Blog
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 I am following instructions here
 - https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays/overview
@@ -52,14 +51,14 @@ Somehow my ESP32-S3 did not respond to a double-tap on reset, so I did a factory
 I downloaded the MU editor as per instructions. It connected up to the ESP32-S3 board and its serial port. No red LED though.<BR>
 Looks like sometimes I need to reset after saving new code MU.
 
-#### CircUp tool for libraries
+### CircUp tool for libraries
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays/circuitpython-libraries
 
 Use the CircUp tool to update the libraries, or else copy the entire new Adafruit library.
 - https://learn.adafruit.com/keep-your-circuitpython-libraries-on-devices-up-to-date-with-circup/usage
 
-#### settings toml file
+### settings toml file
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 https://docs.circuitpython.org/en/latest/docs/environment.html
 
@@ -84,7 +83,7 @@ CIRCUITPY_PYSTACK_SIZE - undocumented
 - for qualia CIRCUITPY_PYSTACK_SIZE=4000 seems good, but usually not needed
 
 
-#### Sample Programs
+### Sample Programs
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 All four sample programs now working!
 
