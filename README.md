@@ -39,15 +39,15 @@ LCD Module spec: https://cdn-shop.adafruit.com/product-files/5792/Specification_
 I am following instructions here
 - https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays/overview
 
-2023-11-09
-- I am using adafruit-circuitpython-adafruit_qualia_s3_rgb666-en_US-20231109-3ca9802.uf2<br>
-- library adafruit-circuitpython-bundle-9.x-mpy-20231109.zip
-  - I put the entire library into the ESP32-S3
+
+I am using the latest *.uf2 from https://circuitpython.org/board/adafruit_qualia_s3_rgb666/
+- Choose your board from https://circuitpython.org/downloads to get latest download
+- I put the entire library into the ESP32-S3
 
 Somehow my ESP32-S3 did not respond to a double-tap on reset, so I did a factory reset and reloaded the UF2 bootloader. I followed the instructions here and it worked the first time.
 - https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays/install-uf2-bootloader
 
-I downloaded the MU editor as per instructions. It connected up to the ESP32-S3 board and its serial port. No red LED though.<BR>
+I downloaded the **MU** editor as per instructions. It connected up to the ESP32-S3 board and its serial port. No red LED though.<BR>
 Looks like sometimes I need to reset after saving new code MU.
 
 ### CircUp tool for libraries
