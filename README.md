@@ -11,6 +11,7 @@ Author: https://github.com/Mark-MDO47
   * [settings toml file](#settings-toml-file "settings toml file")
   * [Sample Programs](#sample-programs "Sample Programs")
   * [mdo_qualia_paint](#mdo_qualia_paint "mdo_qualia_paint")
+    * [Installing](#installing "Installing")
 
 ## Hardware
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
