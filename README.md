@@ -111,7 +111,7 @@ To do this I needed to be able to convert an image file (.bmp, .png, .jpg) to th
 - These files plus the original Adafruit files are in the **mdo_qualia_paint** directory.
 
 | goggles | upside-down | rubber band gun |
-| --- | --- |
+| --- | --- | --- |
 | <img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/mdo_qualia_paint.jpg" width="300" alt="Image of mdo_qualia_paint showing goggles"> | <img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/qualia_upsidedwn.jpg" width="300" alt="Image of mdo_qualia_paint showing goggles upside down"> | <img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/qualia_rbg.jpg" width="300" alt="Image of mdo_qualia_paint showing rubber band gun"> |
 
 The hotspot on the bottom middle causes a screen re-draw using the next **.bin** file in the **pix** directory.
