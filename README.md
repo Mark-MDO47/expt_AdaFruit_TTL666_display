@@ -12,6 +12,8 @@ Author: https://github.com/Mark-MDO47
   * [Sample Programs](#sample-programs "Sample Programs")
   * [mdo_qualia_paint](#mdo_qualia_paint "mdo_qualia_paint")
 
+<img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/mdo_qualia_paint.jpg" width="150" alt="Image of mdo_qualia_paint showing goggles">
+
 ## Hardware
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 Initial HW:
