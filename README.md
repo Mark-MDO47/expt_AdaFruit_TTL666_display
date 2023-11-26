@@ -13,14 +13,16 @@ Author: https://github.com/Mark-MDO47
   * [mdo_qualia_paint](#mdo_qualia_paint "mdo_qualia_paint")
     * [Installing](#installing "Installing")
 
+<img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/mdo_qualia_paint.jpg" width="150" alt="Image of mdo_qualia_paint showing goggles">
+
 ## Hardware
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 Initial HW:
 | Hardware | Description | URL |
 | --- | --- | --- |
-| Qualia ESP32-S3 RBG-666 40p TFT | Special TFT ESP32-S3 board | http://adafru.it/6800 |
-| 2.1 Inch 480x480 Cap Display | TFT round display | http://adafrui.it/5792 |
-| 4 Inch CAP Touch TFT Display | touch TFT square display | http://adafrui.it/5794 |
+| Qualia ESP32-S3 RBG-666 40p TFT | Special TFT ESP32-S3 board | https://www.adafruit.com/product/6800 |
+| 2.1 Inch 480x480 Cap Display | TFT round display | https://www.adafruit.com/product/5792 |
+| 4 Inch CAP Touch TFT Display 720x720 | touch TFT square display | https://www.adafruit.com/product/5794 |
 
 Guide for Qualia ESP32-S3
 - https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays
@@ -111,7 +113,9 @@ To do this I needed to be able to convert an image file (.bmp, .png, .jpg) to th
 - I then had it also create a **.bin** file that is a big-endian version of the data in raw binary. It now takes about 15 seconds to boot mdo_qualia_paint.py reading this *.bin file.
 - These files plus the original Adafruit files are in the **mdo_qualia_paint** directory.
 
-<img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/mdo_qualia_paint.jpg" width="300" alt="Image of mdo_qualia_paint running">
+| goggles | upside-down | rubber band gun |
+| --- | --- | --- |
+| <img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/mdo_qualia_paint.jpg" width="300" alt="Image of mdo_qualia_paint showing goggles"> | <img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/qualia_upsidedwn.jpg" width="300" alt="Image of mdo_qualia_paint showing goggles upside down"> | <img src="https://github.com/Mark-MDO47/expt_AdaFruit_TTL666_display/blob/master/images/qualia_rbg.jpg" width="300" alt="Image of mdo_qualia_paint showing rubber band gun"> |
 
 The hotspot on the bottom middle causes a screen re-draw using the next **.bin** file in the **pix** directory.
 
