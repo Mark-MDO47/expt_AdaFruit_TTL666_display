@@ -20,7 +20,7 @@ Author: https://github.com/Mark-MDO47
 Initial HW:
 | Hardware | Description | URL |
 | --- | --- | --- |
-| Qualia ESP32-S3 RBG-666 40p TFT | Special TFT ESP32-S3 board | https://www.adafruit.com/product/6800 |
+| Qualia ESP32-S3 RBG-666 40p TFT | Special TFT ESP32-S3 board | https://www.adafruit.com/product/5800 |
 | 2.1 Inch 480x480 Cap Display | TFT round display | https://www.adafruit.com/product/5792 |
 | 4 Inch CAP Touch TFT Display 720x720 | touch TFT square display | https://www.adafruit.com/product/5794 |
 
