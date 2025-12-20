@@ -62,28 +62,16 @@ Use the CircUp tool to update the libraries, or else copy the entire new Adafrui
 
 ### settings toml file
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
-https://docs.circuitpython.org/en/latest/docs/environment.html
-
 Should probably set the following in **settings.toml** file; enclose strings within double-quotes ""
+- https://docs.circuitpython.org/en/latest/docs/environment.html
 
-CIRCUITPY_WEB_API_PASSWORD
-- Password required to make modifications to the board from the Web Workflow.
-  - I just set this to nonsense so it won't connect
-
-CIRCUITPY_WIFI_PASSWORD
-- Wi-Fi password used to auto connect to CIRCUITPY_WIFI_SSID.
-
-CIRCUITPY_WIFI_SSID
-- Wi-Fi SSID to auto-connect to even if user code is not running.
-
-CIRCUITPY_HEAP_START_SIZE - undocumented
-- size of heap at startup
-- for qualia CIRCUITPY_HEAP_START_SIZE=3072000 seems good, but usually not needed
-
-CIRCUITPY_PYSTACK_SIZE - undocumented
-- size of stack at startup
-- for qualia CIRCUITPY_PYSTACK_SIZE=4000 seems good, but usually not needed
-
+| Parameter | Description | Comments |
+| --- | --- | ---  |
+| CIRCUITPY_WEB_API_PASSWORD | Password required to make modifications to the board from the Web Workflow | I just set this to nonsense so it won't connect |
+| CIRCUITPY_WIFI_PASSWORD | Wi-Fi password used to auto connect to CIRCUITPY_WIFI_SSID | None |
+| CIRCUITPY_WIFI_SSID | Wi-Fi SSID to auto-connect to even if user code is not running | None |
+| CIRCUITPY_HEAP_START_SIZE | size of heap at startup | for qualia 3072000 seems good, but usually not needed |
+| CIRCUITPY_PYSTACK_SIZE | size of stack at startup | for qualia 4000 seems good, but usually not needed |
 
 ### Sample Programs
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
