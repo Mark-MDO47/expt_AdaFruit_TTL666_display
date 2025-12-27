@@ -95,11 +95,14 @@ Code done running.
 ### mdo_qualia_paint
 [Top](#experimenting-with-adafruit-ttl-rgb666-displays "Top")<br>
 I made a version of the sample program qualia_paint.py to put an image in the "paint" portion of the screen and called it **mdo_qualia_paint.py**
+- My modified qualia_paint files are in the **mdo_qualia_paint** directory.
+- The original Adafruit version is in the **mdo_qualia_paint/fromAdafruit_examples** directory.
 
-To do this I needed to be able to convert an image file (.bmp, .png, .jpg) to the 16-bit RBG 565 format used by the display. I modified **tablegen.py** from https://github.com/adafruit/Uncanny_Eyes commit d2103e84aa33da9f6924885ebc06d880af8deeff and named it **mdo_tablegen.py**.
-- At first I had it continue to create the C-language *.h file and read that file in mdo_qualia_paint and converted to binary on the board. This took about 2.5 minutes to boot mdo_qualia_paint.py even after cropping the left 1/3 of the picture that is used for the controls.
-- I then had it also create a **.bin** file that is a big-endian version of the data in raw binary. It now takes about 15 seconds to boot mdo_qualia_paint.py reading this *.bin file.
-- These files plus the original Adafruit files are in the **mdo_qualia_paint** directory.
+For speed I needed to be able to convert an image file (.bmp, .png, .jpg) to the 16-bit RBG 565 format used by the display. I modified **tablegen.py** from https://github.com/adafruit/Uncanny_Eyes commit d2103e84aa33da9f6924885ebc06d880af8deeff and named it **mdo_tablegen.py**.
+- At first I had mdo_qualia_paint read the original tablegen.py combined C-language *.h file and converted to binary on the ESP32-S3 board using Python. This took about 2.5 minutes to boot mdo_qualia_paint.py even after cropping the left 1/3 of the picture that is used for the controls.
+- I then had mdo_tablegen also create a **.bin** file that is a big-endian version of the data in raw binary. It now takes about 15 seconds to boot mdo_qualia_paint.py reading this *.bin file.
+- My modified tablegen files are in the **mdo_qualia_paint** directory.
+- The original Adafruit tablegen files are in the **mdo_qualia_paint/fromAdafruit_Uncanny_Eyes** directory.
 
 | goggles | upside-down | rubber band gun |
 | --- | --- | --- |
