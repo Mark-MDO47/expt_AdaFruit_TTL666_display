@@ -99,8 +99,8 @@ I made a version of the sample program qualia_paint.py to put an image in the "p
 - The original Adafruit version is in the **mdo_qualia_paint/fromAdafruit_examples** directory.
 
 For speed I needed to be able to convert an image file (.bmp, .png, .jpg) to the 16-bit RBG 565 format used by the display. I modified **tablegen.py** from https://github.com/adafruit/Uncanny_Eyes commit d2103e84aa33da9f6924885ebc06d880af8deeff and named it **mdo_tablegen.py**.
-- At first I had mdo_qualia_paint read the original tablegen.py combined C-language *.h file and converted to binary on the ESP32-S3 board using Python. This took about 2.5 minutes to boot mdo_qualia_paint.py even after cropping the left 1/3 of the picture that is used for the controls.
-- I then had mdo_tablegen also create a **.bin** file that is a big-endian version of the data in raw binary. It now takes about 15 seconds to boot mdo_qualia_paint.py reading this *.bin file.
+- At first, as in the original qualia_paint, I had mdo_qualia_paint read the combined C-language *.h file from the original tablegen.py and convert it to binary on the ESP32-S3 board using Python. This took about 2.5 minutes to boot mdo_qualia_paint.py even after cropping the left 1/3 of the picture that is used for the touch controls.
+- I then had mdo_tablegen also create **.bin** files that are big-endian versions of the image data in raw binary TFT 565 big-endian format. It now takes about 15 seconds to boot mdo_qualia_paint.py reading this *.bin file.
 - My modified tablegen files are in the **mdo_qualia_paint** directory.
 - The original Adafruit tablegen files are in the **mdo_qualia_paint/fromAdafruit_Uncanny_Eyes** directory.
 
