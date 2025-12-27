@@ -1,23 +1,23 @@
 #!/usr/bin/python
 
-"""
-Originally from d2103e84aa33da9f6924885ebc06d880af8deeff commit
-of https://github.com/adafruit/Uncanny_Eyes
-Image converter for 'Uncanny Eyes' project.  Generates tables for
-eyeData.h file.  Requires Python Imaging Library.  Expects six image
-files: sclera, iris, upper and lower eyelid map (symmetrical), upper
-and lower eyelid map (asymmetrical L/R) -- defaults will be used for
-each if not specified.  Also generates polar coordinate map for iris
-rendering (pass diameter -- must be an even value -- as 7th argument),
-pupil is assumed round unless pupilMap.png image is present.
-Output is to stdout; should be redirected to file for use.
-"""
 
-"""
-modified by github.com/Mark-MDO47/Uncanny_Eyes to just allow generation
-from directory of image files to RGB 565 C-language tables for Arduinos that
-can store the tables in program memory due to RAM limitations.
-"""
+# Originally from d2103e84aa33da9f6924885ebc06d880af8deeff commit
+# of https://github.com/adafruit/Uncanny_Eyes
+# Image converter for 'Uncanny Eyes' project.  Generates tables for
+# eyeData.h file.  Requires Python Imaging Library.  Expects six image
+# files: sclera, iris, upper and lower eyelid map (symmetrical), upper
+# and lower eyelid map (asymmetrical L/R) -- defaults will be used for
+# each if not specified.  Also generates polar coordinate map for iris
+# rendering (pass diameter -- must be an even value -- as 7th argument),
+# pupil is assumed round unless pupilMap.png image is present.
+# Output is to stdout; should be redirected to file for use.
+
+# modified by github.com/Mark-MDO47/Uncanny_Eyes to just allow generation
+# from directory of image files to RGB 565 C-language tables for Arduinos that
+# can store the tables in program memory due to RAM limitations.
+
+# also modified to do *.h files for above and *.bin files for efficient
+# loading of binary TFT images.
 
 # This is kinda some horrible copy-and-paste code right now for each of
 # the images...could be improved, but basically does the thing.
@@ -27,7 +27,7 @@ import sys
 import argparse
 import re
 from PIL import Image
-from hextable import HexTable
+from mdo_hextable import HexTable
 
 #######################################################################
 # do_generate_565_table_bin(image_dir_name)
@@ -43,12 +43,10 @@ def do_generate_565_table_bin(image_dir_name, add_progmem, left_chop):
         image_dir_name = image_dir_name[:-1]
     filenames = os.listdir(image_dir_name)
 
-    re_images = "\.[Pp][Nn][Gg]$|\.[Jj][Pp][Gg]$|\.[Bb][Mm][Pp]$"
+    re_images = "[.][Pp][Nn][Gg]$|[.][Jj][Pp][Gg]$|[.][Bb][Mm][Pp]$"
     table_name_list = []
     for a_fname in filenames:
-        if re.search(re_images, a_fname):
-            pass # cannot use ! here, strangely
-        else:
+        if not re.search(re_images, a_fname):
             continue
         input_fname = "%s\\%s" % (image_dir_name, a_fname)
         IMAGE = Image.open(input_fname)
@@ -60,15 +58,17 @@ def do_generate_565_table_bin(image_dir_name, add_progmem, left_chop):
         else:
             table_name_list.append(table_name)
 
-        print('// from filename %s' % input_fname)
-        print('#define %s_WIDTH  %s'  % (table_name, str(IMAGE.size[0]-left_chop)))
-        print('#define %s_HEIGHT  %s' % (table_name, str(IMAGE.size[1])))
-        print('')
-
-        sys.stdout.write('const uint16_t %s_565[%s_HEIGHT][%s_WIDTH] %s= {' % (table_name,table_name,table_name,add_progmem))
+        # write the .h file for this image
+        output_h_fname = input_fname[:input_fname.rfind(".")] + ".h"
+        fptr = open(output_h_fname, "wt")
+        fptr.write('// from filename %s\n' % input_fname)
+        fptr.write('#define %s_WIDTH  %s\n'  % (table_name, str(IMAGE.size[0]-left_chop)))
+        fptr.write('#define %s_HEIGHT  %s\n' % (table_name, str(IMAGE.size[1])))
+        fptr.write('\n')
+        #   we do the first line here so we control const, PROGMEM, etc.
+        fptr.write('const uint16_t %s_565[%s_HEIGHT][%s_WIDTH] %s= {\n' % (table_name,table_name,table_name,add_progmem))
         HEX = HexTable(IMAGE.size[0] * IMAGE.size[1], 8, 4)
-        
-        # Convert 24-bit image to 16 bits:
+        # Convert 24-bit image to 16 bits 565:
         ba = bytearray()
         for y in range(IMAGE.size[1]):
             for x in range(left_chop,IMAGE.size[0]):
@@ -77,9 +77,11 @@ def do_generate_565_table_bin(image_dir_name, add_progmem, left_chop):
                 bits16 = (p[0] & 0b11111000) << 8 | \
                     (p[1] & 0b11111100) << 3      | \
                     (p[2] & 0b11111000) >> 3
-                HEX.write(bits16)
+                HEX.write(bits16, fptr)
                 ba.append((bits16 >> 8) & 0xff) # msbyte first == big-endian
                 ba.append(bits16 & 0xff)
+        fptr.close()
+
         # write the binary file in big-endian
         outputbin_fname = input_fname[:input_fname.rfind(".")] + ".bin"
         fptr = open(outputbin_fname, "wb")
@@ -91,16 +93,18 @@ def do_generate_565_table_bin(image_dir_name, add_progmem, left_chop):
 # "__main__" processing for mdo_tablegen
 #
 # finds all *.png, *.jpg and *.bmp in a directory
-# generates a 565 table for each filename
+# generates a 565 table for each filename to a *.h file
+#   and a 565 bin to a *.bin file
 #
 if __name__ == "__main__":
     my_parser = argparse.ArgumentParser(prog='mdo_tablegen',
         formatter_class=argparse.RawTextHelpFormatter,
-        description="Sends to stdout C-language tables in RGB 565 format for\n" +
+        description="Writes *.h C-language tables in RGB 565 format for\n" +
         "        dir of image files (*.png, *.jpg, *.bmp).\n" +
         "        Always uses const, -p to add PROGMEM\n" +
-        "Also creates *.bin file 565 RBG big-endian\n"
-        "    OK with or without trailing \\ or / for image_dir_name\n",
+        "Also writes *.bin file 565 RBG big-endian\n" +
+        "        suitable for load_bitmap() calls\n"
+        "OK to call with or without trailing \\ or / for image_dir_name\n",
         epilog="""Example:
 python mdo_tablegen.py -h
 python mdo_tablegen.py image_dir_name
@@ -129,5 +133,5 @@ python mdo_tablegen.py image_dir_name --leftchop=160
     if args.progmem:
         add_progmem = "PROGMEM "
 
-    print("%s progmem=%s lc=%s" % (args.image_dir_name, add_progmem, args.leftchop))
+    # print("%s progmem=%s lc=%s" % (args.image_dir_name, add_progmem, args.leftchop))
     do_generate_565_table_bin(args.image_dir_name, add_progmem, args.leftchop)
